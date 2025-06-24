@@ -1,3 +1,5 @@
 sxtwl
 py-iztro
-flatlib 
+flatlib
+matplotlib
+numpy 

@@ -99,12 +99,37 @@ python triple_chart_parser.py --birth-date 1988-12-25 --birth-time 18:20 --timez
 }
 ```
 
+## 图表可视化功能 🎨
+
+本项目还包含强大的图表可视化功能，可以将JSON排盘数据转换为精美的图表：
+
+### 快速使用
+
+```bash
+# 1. 生成排盘数据
+python triple_chart_parser.py --birth-date 2000-01-01 --birth-time 00:00 --timezone +8 --longitude 116.4 --latitude 39.9 --gender 1 --save-file --location 北京
+
+# 2. 生成可视化图表
+python chart_visualizer.py 1_20000101_0000_北京_116.4_39.9.json
+```
+
+### 支持的图表类型
+
+- **八字排盘图**：四柱结构，含天干地支、藏干、十神、日主高亮
+- **紫微斗数命盘图**：12宫格布盘，标注主星、副星、身宫
+- **印度星盘图**：南印度样式，显示Asc、行星位置、星座
+
+### 详细说明
+
+查看 [VISUALIZATION_README.md](VISUALIZATION_README.md) 获取完整的可视化功能使用指南。
+
 ## 故障排查
 
 - **缺少依赖库**：运行 `pip install -r requirements.txt`
 - **时间计算异常**：检查时区格式是否正确（使用数字格式，如+8、-5）
 - **经纬度输入异常**：确保使用浮点数格式
 - **环境问题**：确保已激活Python虚拟环境
+- **图表生成问题**：确保已安装matplotlib和numpy依赖
 
 ## 技术说明
 
