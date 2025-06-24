@@ -244,60 +244,72 @@ class ChartVisualizer:
         plt.close()
     
     def generate_vedic_chart(self, save_path=None):
-        """生成印度星盘图（南印度样式）"""
+        """生成印度星盘图（北印度样式）"""
         print("🎨 生成印度星盘图...")
         
-        fig, ax = plt.subplots(1, 1, figsize=(12, 12))
-        ax.set_xlim(-6, 6)
-        ax.set_ylim(-6, 6)
+        fig, ax = plt.subplots(1, 1, figsize=(10, 10))
+        ax.set_xlim(-5, 5)
+        ax.set_ylim(-5, 5)
         ax.axis('off')
         ax.set_aspect('equal')
         
         # 标题
         birth_info = self.data['input']
-        title = f"印度星盘 (Vedic Chart) - {birth_info['birth_date']} {birth_info['birth_time']}"
-        ax.text(0, 5.5, title, ha='center', va='center', fontsize=16, fontweight='bold')
+        title = f"D1 North India Chart - {birth_info['birth_date']} {birth_info['birth_time']}"
+        ax.text(0, -4.5, title, ha='center', va='center', fontsize=14, fontweight='bold')
         
-        # 南印度样式：菱形12宫布局
-        # 绘制外框
-        outer_square = Rectangle((-4, -4), 8, 8, facecolor='none', edgecolor='black', linewidth=3)
-        ax.add_patch(outer_square)
+        # 北印度样式：正方形布局，不是菱形
+        square_size = 3
         
-        # 绘制内部分割线
-        # 水平线
-        ax.plot([-4, 4], [1.33, 1.33], 'k-', linewidth=2)
-        ax.plot([-4, 4], [-1.33, -1.33], 'k-', linewidth=2)
-        # 垂直线
-        ax.plot([-1.33, -1.33], [-4, 4], 'k-', linewidth=2)
-        ax.plot([1.33, 1.33], [-4, 4], 'k-', linewidth=2)
+        # 绘制外框 - 正方形
+        ax.plot([-square_size, square_size], [square_size, square_size], 'k-', linewidth=2)    # 上边
+        ax.plot([square_size, square_size], [square_size, -square_size], 'k-', linewidth=2)    # 右边
+        ax.plot([square_size, -square_size], [-square_size, -square_size], 'k-', linewidth=2)  # 下边
+        ax.plot([-square_size, -square_size], [-square_size, square_size], 'k-', linewidth=2)  # 左边
         
-        # 对角线
-        ax.plot([-4, -1.33], [4, 1.33], 'k-', linewidth=2)
-        ax.plot([1.33, 4], [4, 1.33], 'k-', linewidth=2)
-        ax.plot([-4, -1.33], [-4, -1.33], 'k-', linewidth=2)
-        ax.plot([1.33, 4], [-4, -1.33], 'k-', linewidth=2)
+        # 绘制内部分割线形成12个区域
+        # 水平分割线
+        ax.plot([-square_size, square_size], [1, 1], 'k-', linewidth=1)      # 上1/3线
+        ax.plot([-square_size, square_size], [-1, -1], 'k-', linewidth=1)    # 下1/3线
         
-        # 重新定义12宫位置（避免重叠）
+        # 垂直分割线
+        ax.plot([-1, -1], [-square_size, square_size], 'k-', linewidth=1)    # 左1/3线
+        ax.plot([1, 1], [-square_size, square_size], 'k-', linewidth=1)      # 右1/3线
+        
+        # 对角分割线（形成三角形区域）
+        ax.plot([-square_size, -1], [square_size, 1], 'k-', linewidth=1)     # 左上角对角线
+        ax.plot([1, square_size], [square_size, 1], 'k-', linewidth=1)       # 右上角对角线
+        ax.plot([square_size, 1], [-square_size, -1], 'k-', linewidth=1)     # 右下角对角线
+        ax.plot([-1, -square_size], [-square_size, -1], 'k-', linewidth=1)   # 左下角对角线
+        
+        # 12宫位置定义（按照您的图片布局）
         house_positions = {
-            1: (0, 2.67),       # 第1宫（上中）
-            2: (-2.67, 2.67),   # 第2宫（左上角）
-            3: (-2.67, 0),      # 第3宫（左中）
-            4: (-2.67, -2.67),  # 第4宫（左下角）
-            5: (0, -2.67),      # 第5宫（下中）
-            6: (2.67, -2.67),   # 第6宫（右下角）
-            7: (2.67, 0),       # 第7宫（右中）
-            8: (2.67, 2.67),    # 第8宫（右上角）
-            9: (0, 0.67),       # 第9宫（中上）
-            10: (-0.67, 0),     # 第10宫（中左）
-            11: (0, -0.67),     # 第11宫（中下）
-            12: (0.67, 0)       # 第12宫（中右）
+            1: (0, 2),          # 第1宫 - 上中（牡羊座）
+            2: (-2, 2),         # 第2宫 - 左上角（金牛座）
+            3: (-2, 0),         # 第3宫 - 左中（双子座）
+            4: (-2, -2),        # 第4宫 - 左下角（巨蟹座）
+            5: (0, -2),         # 第5宫 - 下中（狮子座）
+            6: (2, -2),         # 第6宫 - 右下角（处女座）
+            7: (2, 0),          # 第7宫 - 右中（天秤座）
+            8: (2, 2),          # 第8宫 - 右上角（天蝎座）
+            9: (-0.5, 0.5),     # 第9宫 - 中左上（射手座）
+            10: (-0.5, -0.5),   # 第10宫 - 中左下（摩羯座）
+            11: (0.5, -0.5),    # 第11宫 - 中右下（水瓶座）
+            12: (0.5, 0.5)      # 第12宫 - 中右上（双鱼座）
         }
         
-        # 宫位名称
-        house_names = {
-            1: "1st\n(Asc)", 2: "2nd", 3: "3rd", 4: "4th",
-            5: "5th", 6: "6th", 7: "7th", 8: "8th",
-            9: "9th", 10: "10th", 11: "11th", 12: "12th"
+        # 星座中文名称映射
+        sign_chinese = {
+            'Aries': '白羊座', 'Taurus': '金牛座', 'Gemini': '双子座', 'Cancer': '巨蟹座',
+            'Leo': '狮子座', 'Virgo': '处女座', 'Libra': '天秤座', 'Scorpio': '天蝎座',
+            'Sagittarius': '射手座', 'Capricorn': '摩羯座', 'Aquarius': '水瓶座', 'Pisces': '双鱼座'
+        }
+        
+        # 行星中文名称映射
+        planet_chinese = {
+            'Sun': '日', 'Moon': '月', 'Mercury': '水', 'Venus': '金',
+            'Mars': '火', 'Jupiter': '木', 'Saturn': '土', 
+            'Rahu': 'Ra', 'Ketu': 'Ke', 'Uranus': '天', 'Neptune': '海', 'Pluto': '冥'
         }
         
         # 获取印度星盘数据
@@ -305,111 +317,73 @@ class ChartVisualizer:
         planets_data = vedic_data.get('planets', {})
         houses_data = vedic_data.get('houses', {})
         
-        # 为每个宫位收集行星信息
+        # 获取上升星座
+        asc_info = vedic_data.get('ascendant', {})
+        asc_sign = asc_info.get('sign', 'Aries') if asc_info else 'Aries'
+        
+        # 计算每个宫位对应的星座（从上升星座开始）
+        signs_order = ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 
+                      'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces']
+        
+        try:
+            asc_index = signs_order.index(asc_sign)
+        except ValueError:
+            asc_index = 0  # 默认从白羊座开始
+        
+        # 为每个宫位分配星座和收集行星
+        house_signs = {}
         house_planets = {i: [] for i in range(1, 13)}
+        
+        for house_num in range(1, 13):
+            sign_index = (asc_index + house_num - 1) % 12
+            house_signs[house_num] = signs_order[sign_index]
         
         # 分析行星在各宫位的分布
         for planet_name, planet_info in planets_data.items():
             if isinstance(planet_info, dict):
                 house_num = planet_info.get('house')
                 if house_num and 1 <= house_num <= 12:
-                    # 简化行星名称
-                    planet_abbr = {
-                        'Sun': 'Su', 'Moon': 'Mo', 'Mercury': 'Me', 'Venus': 'Ve',
-                        'Mars': 'Ma', 'Jupiter': 'Ju', 'Saturn': 'Sa', 
-                        'Rahu': 'Ra', 'Ketu': 'Ke', 'Uranus': 'Ur', 
-                        'Neptune': 'Ne', 'Pluto': 'Pl'
-                    }.get(planet_name, planet_name[:2])
-                    
-                    sign = planet_info.get('sign', '')
-                    sign_abbr = sign[:3] if sign else ''
-                    house_planets[house_num].append(f"{planet_abbr}\n{sign_abbr}")
+                    planet_abbr = planet_chinese.get(planet_name, planet_name)
+                    degree = planet_info.get('lon', 0)  # 使用lon字段作为角度
+                    house_planets[house_num].append(f"{planet_abbr} {degree:.1f}")
         
         # 绘制各宫位信息
         for house_num in range(1, 13):
             x, y = house_positions[house_num]
+            sign_name = house_signs[house_num]
+            sign_chinese_name = sign_chinese.get(sign_name, sign_name)
             
-            # 宫位名称（较小字体，放在角落）
-            name_offset_x = -0.8 if x < 0 else (0.8 if x > 0 else 0)
-            name_offset_y = 0.8 if y > 0 else (-0.8 if y < 0 else 0.8)
+            # 显示星座名称
+            ax.text(x, y + 0.3, sign_chinese_name, ha='center', va='center', 
+                   fontsize=9, fontweight='bold', color='black')
             
-            ax.text(x + name_offset_x, y + name_offset_y, house_names[house_num], 
-                   ha='center', va='center', fontsize=8, fontweight='bold',
-                   bbox=dict(boxstyle="round,pad=0.2", facecolor='lightblue', alpha=0.7))
-            
-            # 显示该宫位的行星
+            # 显示该宫位的行星（带角度）
             planets_in_house = house_planets[house_num]
             if planets_in_house:
-                # 限制显示的行星数量，避免重叠
-                display_planets = planets_in_house[:3]  # 最多显示3个行星
-                
-                if len(display_planets) == 1:
-                    # 单个行星居中显示
-                    ax.text(x, y, display_planets[0], ha='center', va='center', 
-                           fontsize=9, fontweight='bold', color='red')
-                elif len(display_planets) == 2:
-                    # 两个行星上下排列
-                    ax.text(x, y + 0.2, display_planets[0], ha='center', va='center', 
-                           fontsize=8, fontweight='bold', color='red')
-                    ax.text(x, y - 0.2, display_planets[1], ha='center', va='center', 
-                           fontsize=8, fontweight='bold', color='red')
+                if len(planets_in_house) == 1:
+                    # 单个行星
+                    ax.text(x, y - 0.2, planets_in_house[0], ha='center', va='center', 
+                           fontsize=8, color='blue')
+                elif len(planets_in_house) == 2:
+                    # 两个行星
+                    ax.text(x, y - 0.1, planets_in_house[0], ha='center', va='center', 
+                           fontsize=7, color='blue')
+                    ax.text(x, y - 0.35, planets_in_house[1], ha='center', va='center', 
+                           fontsize=7, color='blue')
                 else:
-                    # 三个行星紧凑排列
-                    ax.text(x, y + 0.3, display_planets[0], ha='center', va='center', 
-                           fontsize=7, fontweight='bold', color='red')
-                    ax.text(x, y, display_planets[1], ha='center', va='center', 
-                           fontsize=7, fontweight='bold', color='red')
-                    ax.text(x, y - 0.3, display_planets[2], ha='center', va='center', 
-                           fontsize=7, fontweight='bold', color='red')
-                
-                # 如果有更多行星，显示省略号
-                if len(planets_in_house) > 3:
-                    ax.text(x + 0.5, y - 0.5, f"+{len(planets_in_house) - 3}", 
-                           ha='center', va='center', fontsize=6, color='blue')
+                    # 多个行星，紧凑显示
+                    for i, planet in enumerate(planets_in_house[:3]):
+                        ax.text(x, y - 0.05 - i * 0.12, planet, ha='center', va='center', 
+                               fontsize=6, color='blue')
+                    if len(planets_in_house) > 3:
+                        ax.text(x + 0.3, y - 0.3, f"+{len(planets_in_house) - 3}", 
+                               ha='center', va='center', fontsize=5, color='red')
         
-        # 显示上升星座信息
-        asc_info = vedic_data.get('ascendant', {})
-        if asc_info:
-            asc_sign = asc_info.get('sign', '')
-            asc_degree = asc_info.get('degree', 0)
-            if asc_sign:
-                ax.text(0, 4.5, f"上升: {asc_sign} {asc_degree:.1f}°", 
-                       ha='center', va='center', fontsize=12, fontweight='bold',
-                       bbox=dict(boxstyle="round,pad=0.3", facecolor='yellow', alpha=0.8))
-        
-        # 在底部显示行星位置摘要（分行显示避免重叠）
-        if planets_data:
-            planet_info_lines = []
-            planet_list = []
-            
-            for planet, info in list(planets_data.items())[:8]:  # 显示前8个行星
-                if isinstance(info, dict):
-                    sign = info.get('sign', '')
-                    house = info.get('house', '')
-                    planet_abbr = {
-                        'Sun': '☉', 'Moon': '☽', 'Mercury': '☿', 'Venus': '♀',
-                        'Mars': '♂', 'Jupiter': '♃', 'Saturn': '♄', 
-                        'Rahu': 'Ra', 'Ketu': 'Ke'
-                    }.get(planet, planet[:2])
-                    
-                    planet_list.append(f"{planet_abbr}:{sign[:3]}-{house}宫")
-            
-            # 分成两行显示
-            if planet_list:
-                mid = len(planet_list) // 2
-                line1 = " ".join(planet_list[:mid])
-                line2 = " ".join(planet_list[mid:])
-                
-                ax.text(0, -4.8, line1, ha='center', va='center', fontsize=9)
-                if line2:
-                    ax.text(0, -5.2, line2, ha='center', va='center', fontsize=9)
-        
-        # 图例（分行显示）
-        legend_line1 = "☉太阳 ☽月亮 ☿水星 ♀金星 ♂火星 ♃木星 ♄土星"
-        legend_line2 = "Su=Sun Mo=Moon Me=Mercury Ve=Venus Ma=Mars Ju=Jupiter Sa=Saturn"
-        
-        ax.text(0, -5.8, legend_line1, ha='center', va='center', fontsize=8, style='italic')
-        ax.text(0, -6.1, legend_line2, ha='center', va='center', fontsize=7, style='italic')
+        # 在第1宫添加Lagna标记
+        lagna_x, lagna_y = house_positions[1]
+        ax.text(lagna_x, lagna_y, "Lagna", ha='center', va='center', 
+               fontsize=7, fontweight='bold', color='blue',
+               bbox=dict(boxstyle="round,pad=0.1", facecolor='lightblue', alpha=0.8))
         
         plt.tight_layout()
         
