@@ -1,0 +1,90 @@
+{
+  "birth_info": {
+    "birth_date": "1998-05-29",
+    "birth_time": "09:00",
+    "timezone": "+8",
+    "longitude": 116.4,
+    "latitude": 39.9
+  },
+  "vedic_chart": {
+    "chart_type": "vedic_sidereal",
+    "ayanamsa": {
+      "type": "lahiri",
+      "value": 23.85
+    },
+    "ascendant": {
+      "sign": "Libra",
+      "house": 1,
+      "lon": 11.52
+    },
+    "planets": {
+      "Sun": {
+        "sign": "Taurus",
+        "house": 8,
+        "lon": 13.94
+      },
+      "Moon": {
+        "sign": "Cancer",
+        "house": 9,
+        "lon": 0.7
+      },
+      "Mercury": {
+        "sign": "Taurus",
+        "house": 7,
+        "lon": 0.22
+      },
+      "Venus": {
+        "sign": "Aries",
+        "house": 6,
+        "lon": 5.43
+      },
+      "Mars": {
+        "sign": "Taurus",
+        "house": 7,
+        "lon": 9.85
+      },
+      "Jupiter": {
+        "sign": "Pisces",
+        "house": 5,
+        "lon": 0.48
+      },
+      "Saturn": {
+        "sign": "Aries",
+        "house": 6,
+        "lon": 5.02
+      },
+      "North Node": {
+        "sign": "Leo",
+        "house": 11,
+        "lon": 12.02
+      },
+      "South Node": {
+        "sign": "Aquarius",
+        "house": 5,
+        "lon": 12.02
+      }
+    },
+    "axis_points": {
+      "Descendant": {
+        "sign": "Aries",
+        "house": 7,
+        "lon": 11.52
+      },
+      "Midheaven": {
+        "sign": "Cancer",
+        "house": 10,
+        "lon": 18.17
+      },
+      "Imum Coeli": {
+        "sign": "Capricorn",
+        "house": 4,
+        "lon": 18.17
+      },
+      "Pars Fortuna": {
+        "sign": "Scorpio",
+        "house": 2,
+        "lon": 28.27
+      }
+    }
+  }
+}
