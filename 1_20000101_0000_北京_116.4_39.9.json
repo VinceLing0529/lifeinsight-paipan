@@ -1,0 +1,574 @@
+{
+  "input": {
+    "birth_date": "2000-01-01",
+    "birth_time": "00:00",
+    "timezone": "+8",
+    "longitude": 116.4,
+    "latitude": 39.9,
+    "gender": 1,
+    "gender_str": "男"
+  },
+  "bazi": {
+    "year_pillar": "己卯",
+    "month_pillar": "丙子",
+    "day_pillar": "丁巳",
+    "hour_pillar": "庚子",
+    "day_master": "丁",
+    "five_elements_count": {
+      "木": 1,
+      "火": 3,
+      "土": 1,
+      "金": 1,
+      "水": 2
+    },
+    "body_strength": "强",
+    "enhanced_analysis": {
+      "四柱详析": [
+        {
+          "柱序": "年柱",
+          "天干": "己",
+          "地支": "卯",
+          "干支": "己卯",
+          "主星": "食神",
+          "藏干": [
+            "乙"
+          ],
+          "纳音": "城头土",
+          "空亡": [
+            "子",
+            "丑"
+          ],
+          "星运（十二长生）": "病",
+          "藏干十神": [
+            {
+              "藏干": "乙",
+              "十神": "偏印"
+            }
+          ]
+        },
+        {
+          "柱序": "月柱",
+          "天干": "丙",
+          "地支": "子",
+          "干支": "丙子",
+          "主星": "劫财",
+          "藏干": [
+            "癸"
+          ],
+          "纳音": "涧下水",
+          "空亡": [
+            "子",
+            "丑"
+          ],
+          "星运（十二长生）": "绝",
+          "藏干十神": [
+            {
+              "藏干": "癸",
+              "十神": "七杀"
+            }
+          ]
+        },
+        {
+          "柱序": "日柱",
+          "天干": "丁",
+          "地支": "巳",
+          "干支": "丁巳",
+          "主星": "比肩",
+          "藏干": [
+            "丙",
+            "庚",
+            "戊"
+          ],
+          "纳音": "沙中土",
+          "空亡": [
+            "子",
+            "丑"
+          ],
+          "星运（十二长生）": "帝旺",
+          "藏干十神": [
+            {
+              "藏干": "丙",
+              "十神": "劫财"
+            },
+            {
+              "藏干": "庚",
+              "十神": "正财"
+            },
+            {
+              "藏干": "戊",
+              "十神": "伤官"
+            }
+          ]
+        },
+        {
+          "柱序": "时柱",
+          "天干": "庚",
+          "地支": "子",
+          "干支": "庚子",
+          "主星": "正财",
+          "藏干": [
+            "癸"
+          ],
+          "纳音": "壁上土",
+          "空亡": [
+            "子",
+            "丑"
+          ],
+          "星运（十二长生）": "绝",
+          "藏干十神": [
+            {
+              "藏干": "癸",
+              "十神": "七杀"
+            }
+          ]
+        }
+      ],
+      "十神统计": {
+        "食神": 1,
+        "偏印": 1,
+        "劫财": 2,
+        "七杀": 2,
+        "比肩": 1,
+        "正财": 2,
+        "伤官": 1
+      },
+      "分析说明": {
+        "主星": "天干对应的十神",
+        "藏干": "地支中隐藏的天干",
+        "纳音": "干支组合的五行属性",
+        "空亡": "基于日柱的空亡地支",
+        "星运": "基于日干的十二长生状态"
+      }
+    }
+  },
+  "ziwei": {
+    "basic_info": {
+      "lunar_date": "一九九九年冬月廿四",
+      "chinese_date": "己卯 丙子 丁巳 庚子",
+      "soul": "贪狼",
+      "body": "天同",
+      "five_elements_class": "水二局"
+    },
+    "chart": {
+      "palaces": {
+        "福德": {
+          "index": 0,
+          "heavenly_stem": "丙",
+          "earthly_branch": "寅",
+          "is_body_palace": false,
+          "major_stars": [],
+          "minor_stars": [
+            "左辅"
+          ],
+          "adjective_stars": [
+            "天贵",
+            "封诰",
+            "天巫",
+            "天福"
+          ]
+        },
+        "田宅": {
+          "index": 1,
+          "heavenly_stem": "丁",
+          "earthly_branch": "卯",
+          "is_body_palace": false,
+          "major_stars": [
+            {
+              "name": "天府",
+              "brightness": "得",
+              "mutagen": ""
+            }
+          ],
+          "minor_stars": [],
+          "adjective_stars": [
+            "天才",
+            "天寿",
+            "天哭"
+          ]
+        },
+        "官禄": {
+          "index": 2,
+          "heavenly_stem": "戊",
+          "earthly_branch": "辰",
+          "is_body_palace": false,
+          "major_stars": [
+            {
+              "name": "太阴",
+              "brightness": "陷",
+              "mutagen": ""
+            }
+          ],
+          "minor_stars": [
+            "文曲"
+          ],
+          "adjective_stars": [
+            "天空"
+          ]
+        },
+        "仆役": {
+          "index": 3,
+          "heavenly_stem": "己",
+          "earthly_branch": "巳",
+          "is_body_palace": false,
+          "major_stars": [
+            {
+              "name": "廉贞",
+              "brightness": "陷",
+              "mutagen": ""
+            },
+            {
+              "name": "贪狼",
+              "brightness": "陷",
+              "mutagen": "权"
+            }
+          ],
+          "minor_stars": [
+            "天马",
+            "陀罗"
+          ],
+          "adjective_stars": [
+            "孤辰",
+            "蜚廉",
+            "破碎",
+            "天伤"
+          ]
+        },
+        "迁移": {
+          "index": 4,
+          "heavenly_stem": "庚",
+          "earthly_branch": "午",
+          "is_body_palace": false,
+          "major_stars": [
+            {
+              "name": "巨门",
+              "brightness": "旺",
+              "mutagen": ""
+            }
+          ],
+          "minor_stars": [
+            "禄存"
+          ],
+          "adjective_stars": [
+            "天喜",
+            "解神",
+            "台辅",
+            "阴煞"
+          ]
+        },
+        "疾厄": {
+          "index": 5,
+          "heavenly_stem": "辛",
+          "earthly_branch": "未",
+          "is_body_palace": false,
+          "major_stars": [
+            {
+              "name": "天相",
+              "brightness": "得",
+              "mutagen": ""
+            }
+          ],
+          "minor_stars": [
+            "擎羊"
+          ],
+          "adjective_stars": [
+            "龙池",
+            "凤阁",
+            "华盖",
+            "天刑",
+            "天使",
+            "年解"
+          ]
+        },
+        "财帛": {
+          "index": 6,
+          "heavenly_stem": "壬",
+          "earthly_branch": "申",
+          "is_body_palace": false,
+          "major_stars": [
+            {
+              "name": "天同",
+              "brightness": "旺",
+              "mutagen": ""
+            },
+            {
+              "name": "天梁",
+              "brightness": "陷",
+              "mutagen": "科"
+            }
+          ],
+          "minor_stars": [
+            "天钺"
+          ],
+          "adjective_stars": [
+            "恩光",
+            "天厨",
+            "月德",
+            "截路"
+          ]
+        },
+        "子女": {
+          "index": 7,
+          "heavenly_stem": "癸",
+          "earthly_branch": "酉",
+          "is_body_palace": false,
+          "major_stars": [
+            {
+              "name": "武曲",
+              "brightness": "利",
+              "mutagen": "禄"
+            },
+            {
+              "name": "七杀",
+              "brightness": "庙",
+              "mutagen": ""
+            }
+          ],
+          "minor_stars": [
+            "火星"
+          ],
+          "adjective_stars": [
+            "天官",
+            "旬空",
+            "空亡",
+            "天虚"
+          ]
+        },
+        "夫妻": {
+          "index": 8,
+          "heavenly_stem": "甲",
+          "earthly_branch": "戌",
+          "is_body_palace": false,
+          "major_stars": [
+            {
+              "name": "太阳",
+              "brightness": "不",
+              "mutagen": ""
+            }
+          ],
+          "minor_stars": [
+            "文昌",
+            "铃星"
+          ],
+          "adjective_stars": [
+            "天月"
+          ]
+        },
+        "兄弟": {
+          "index": 9,
+          "heavenly_stem": "乙",
+          "earthly_branch": "亥",
+          "is_body_palace": false,
+          "major_stars": [],
+          "minor_stars": [
+            "地空",
+            "地劫"
+          ],
+          "adjective_stars": [
+            "天姚"
+          ]
+        },
+        "命宫": {
+          "index": 10,
+          "heavenly_stem": "丙",
+          "earthly_branch": "子",
+          "is_body_palace": true,
+          "major_stars": [
+            {
+              "name": "天机",
+              "brightness": "庙",
+              "mutagen": ""
+            }
+          ],
+          "minor_stars": [
+            "右弼",
+            "天魁"
+          ],
+          "adjective_stars": [
+            "红鸾",
+            "咸池",
+            "天德"
+          ]
+        },
+        "父母": {
+          "index": 11,
+          "heavenly_stem": "丁",
+          "earthly_branch": "丑",
+          "is_body_palace": false,
+          "major_stars": [
+            {
+              "name": "紫微",
+              "brightness": "庙",
+              "mutagen": ""
+            },
+            {
+              "name": "破军",
+              "brightness": "旺",
+              "mutagen": ""
+            }
+          ],
+          "minor_stars": [],
+          "adjective_stars": [
+            "三台",
+            "八座",
+            "寡宿"
+          ]
+        }
+      },
+      "star_positions": {
+        "天府": "田宅",
+        "太阴": "官禄",
+        "廉贞": "仆役",
+        "贪狼": "仆役",
+        "巨门": "迁移",
+        "天相": "疾厄",
+        "天同": "财帛",
+        "天梁": "财帛",
+        "武曲": "子女",
+        "七杀": "子女",
+        "太阳": "夫妻",
+        "天机": "命宫",
+        "紫微": "父母",
+        "破军": "父母"
+      }
+    },
+    "four_pillars": {
+      "year_pillar": "己卯",
+      "month_pillar": "丙子",
+      "day_pillar": "丁巳",
+      "hour_pillar": "庚子"
+    },
+    "year_four_trans": {
+      "禄": "武曲",
+      "权": "贪狼",
+      "科": "天梁",
+      "忌": "文曲"
+    },
+    "A_functions": {
+      "star_position_example": "父母",
+      "is_empty_house_example": false
+    },
+    "B_functions": {
+      "major_fortune_25": "福德",
+      "flow_year_2024": {
+        "palace": "官禄",
+        "earthly_branch": "辰",
+        "major_stars": [
+          "太阴"
+        ],
+        "minor_stars": [
+          "文曲"
+        ]
+      },
+      "flow_trans_2024": {
+        "禄": "廉贞",
+        "权": "破军",
+        "科": "武曲",
+        "忌": "太阳"
+      },
+      "house_of_flow_2024": "官禄"
+    },
+    "C_functions": {
+      "tri_house_ming": [
+        "命宫",
+        "财帛",
+        "官禄",
+        "迁移"
+      ],
+      "tri_has_star_example": false,
+      "tri_has_trans_example": false,
+      "star_tri_house_example": [
+        "父母",
+        "疾厄",
+        "田宅",
+        "仆役"
+      ]
+    },
+    "enhanced_features": {
+      "A类基础信息": "5个功能全部实现",
+      "B类运势核心": "4个功能全部实现",
+      "C类三方四正": "4个功能全部实现",
+      "总计": "13个核心功能完整实现"
+    }
+  },
+  "vedic": {
+    "chart_type": "vedic_sidereal",
+    "ayanamsa": {
+      "type": "lahiri",
+      "value": 23.86
+    },
+    "ascendant": {
+      "sign": "Sagittarius",
+      "house": 1,
+      "lon": 17.17
+    },
+    "planets": {
+      "Sun": {
+        "sign": "Sagittarius",
+        "house": 12,
+        "lon": 15.99
+      },
+      "Moon": {
+        "sign": "Libra",
+        "house": 10,
+        "lon": 13.31
+      },
+      "Mercury": {
+        "sign": "Sagittarius",
+        "house": 12,
+        "lon": 7.23
+      },
+      "Venus": {
+        "sign": "Scorpio",
+        "house": 11,
+        "lon": 7.09
+      },
+      "Mars": {
+        "sign": "Aquarius",
+        "house": 2,
+        "lon": 3.7
+      },
+      "Jupiter": {
+        "sign": "Aries",
+        "house": 4,
+        "lon": 1.37
+      },
+      "Saturn": {
+        "sign": "Aries",
+        "house": 4,
+        "lon": 16.54
+      },
+      "North Node": {
+        "sign": "Cancer",
+        "house": 7,
+        "lon": 11.2
+      },
+      "South Node": {
+        "sign": "Capricorn",
+        "house": 1,
+        "lon": 11.2
+      }
+    },
+    "axis_points": {
+      "Descendant": {
+        "sign": "Gemini",
+        "house": 7,
+        "lon": 17.17
+      },
+      "Midheaven": {
+        "sign": "Libra",
+        "house": 10,
+        "lon": 11.17
+      },
+      "Imum Coeli": {
+        "sign": "Aries",
+        "house": 4,
+        "lon": 11.17
+      },
+      "Pars Fortuna": {
+        "sign": "Libra",
+        "house": 10,
+        "lon": 14.5
+      }
+    }
+  }
+}
