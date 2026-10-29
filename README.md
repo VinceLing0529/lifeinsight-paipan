@@ -1,5 +1,8 @@
 # 三种命理系统排盘工具 triple_chart_parser.py
 
+> 网页版（FastAPI + React + AI 解读）见 [lifeinsight-web](https://github.com/VinceLing0529/lifeinsight-web)，本仓库是其命令行排盘内核。
+
+
 ## 简介
 
 本工具支持三种命理系统的结构化排盘：
